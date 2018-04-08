@@ -1,4 +1,3 @@
-{
   "particles": {
     "number": {
       "value": 100,
