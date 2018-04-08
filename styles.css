@@ -4,9 +4,10 @@ html, body {
 }
 
 h1{
-	color: black;
+	
     font-family: 'Comfortaa', cursive;
-    font-size: 300%;
+    color: black;
+    font-size: 72px;
     text-align: center;
 }
 #particles-js{
