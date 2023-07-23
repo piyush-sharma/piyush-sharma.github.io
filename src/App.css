@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.switchbox {
+  position: relative;
+  display: inline-block;
+  width: 3.75vw;
+  height: 4vh;
+  left: 96vw;
+  top: 1vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.switchbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 3vh;
+  width: 1.75vw;
+  left: 0.3vw;
+  bottom: 0.5vh;
+  background-color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 9999;
 }
 
-.App-link {
-  color: #61dafb;
+input:checked + .slider {
+  background-color: white;
+}
+input:checked + .slider::before {
+  background-color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.5vw);
+  -ms-transform: translateX(1.5vw);
+  transform: translateX(1.5vw);
+}
+
+.slider.round {
+  border-radius: 100vh;
+}
+
+.slider.round:before {
+  border-radius: 100vh;
+}
+
+img {
+  z-index: 1;
+  position: fixed;
+  user-select: none;
+}
+
+.moon {
+  width: 1.5vw;
+  height: 3vh;
+  top: 1.3vh;
+  left: 98.2vw;
+}
+
+.sun {
+  width: 1.5vw;
+  height: 3vh;
+  top: 1.5vh;
+  left: 96.2vw;
 }
